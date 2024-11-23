@@ -1,10 +1,10 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\misho\\Desktop\\sprint-math-games-9th-grade-black-mesa\\Project\\Wordly\\",
+  "WorkspaceRootPath": "C:\\Users\\misho\\Desktop\\sprint-math-games-9th-grade-black-mesa\\Project\\BaseGameCode\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\misho\\Desktop\\sprint-math-games-9th-grade-black-mesa\\Project\\Wordly\\Wordly\\Wordly.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Wordly\\Wordly.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{B8F5570F-8957-4F44-B68C-E3B130DBC5DD}|Wordly\\Wordly.vcxproj|C:\\Users\\misho\\Desktop\\sprint-math-games-9th-grade-black-mesa\\Project\\BaseGameCode\\Wordly\\Wordly.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{B8F5570F-8957-4F44-B68C-E3B130DBC5DD}|Wordly\\Wordly.vcxproj|solutionrelative:Wordly\\Wordly.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -20,11 +20,11 @@
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "Wordly.cpp",
-              "DocumentMoniker": "C:\\Users\\misho\\Desktop\\sprint-math-games-9th-grade-black-mesa\\Project\\Wordly\\Wordly\\Wordly.cpp",
+              "DocumentMoniker": "C:\\Users\\misho\\Desktop\\sprint-math-games-9th-grade-black-mesa\\Project\\BaseGameCode\\Wordly\\Wordly.cpp",
               "RelativeDocumentMoniker": "Wordly\\Wordly.cpp",
-              "ToolTip": "C:\\Users\\misho\\Desktop\\sprint-math-games-9th-grade-black-mesa\\Project\\Wordly\\Wordly\\Wordly.cpp",
-              "RelativeToolTip": "Wordly\\Wordly.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAATAAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\misho\\Desktop\\sprint-math-games-9th-grade-black-mesa\\Project\\BaseGameCode\\Wordly\\Wordly.cpp*",
+              "RelativeToolTip": "Wordly\\Wordly.cpp*",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAABsAAAAXAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-11-21T17:03:21.949Z",
               "EditorCaption": ""

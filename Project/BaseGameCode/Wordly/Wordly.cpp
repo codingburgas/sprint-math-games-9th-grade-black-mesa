@@ -7,39 +7,38 @@ using  namespace std;
 void setColor(int color) 
 {
     HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
-    SetConsoleTextAttribute(hConsole, color);//позволява да се оцветяват буквите
+    SetConsoleTextAttribute(hConsole, color);//pozvolqva da se ocvetqt bukvite
 }
 
 int main()
 {
-    string arr2[100];
-    int index_arr2;
+    string Word[100];
+    int index_Word;
     bool Symbol = false;
-    int attempts = 6;
+    int attempts = 6; //v wordle ima 6 attempta
     string arrWords[5] = { "radio", "where", "pupil", "games", "fifth" };
 
     srand(time(0));
-    int randomWordNumber = rand() % 5; //izbira random duma
-    string randomWord = arrWords[randomWordNumber];  //tuk sum proverqval
+    int randomWordNumber = rand() % 5; //izbira random num
+    string randomWord = arrWords[randomWordNumber];  //izbira eandom duma ot string i rand num
 
     for (int i = 0; i < attempts; i++)
     {
-        cin >> arr2[i];
-        if (int(arr2[i].length()) == 5)
+        cin >> Word[i]; //vuvejda se dumata
+        if (int(Word[i].length()) == 5) //proverqva dali dumata  e ot 5 bukvi
         {
-             cout << "OK!" << endl;
+             cout << endl;
         }
         else
         {
-             cout << "Please type only words with 5 letters! (+1 attempt)" << endl;
-             ++attempts;
+             cout << "Please type only words with 5 letters!" << endl;
+             ++attempts; //uvelichava attempts za da  uvelichi opitite
         }
-        index_arr2 = i;
-        if (int(arr2[index_arr2][i]) < 65 || int((arr2[index_arr2][i]) > 90 && int(arr2[index_arr2][i]) < 97) || int(arr2[index_arr2][i]) > 122)
+        index_Word = i;
+        if (int(Word[index_Word][i]) < 65 || int((Word[index_Word][i]) > 90 && int(Word[index_Word][i]) < 97) || int(Word[index_Word][i]) > 122) //proverqva dali v dumata ima simvoli
         {
 
             Symbol = true;
-            cout << "Work!!!" << endl;
 
 
         }
@@ -53,22 +52,22 @@ int main()
                 for (int y = 0; y < 5; y++)
                 {
 
-                    if (int(arr2[index_arr2][y]) >= 65 && int(arr2[index_arr2][y]) <= 90)
+                    if (int(Word[index_Word][y]) >= 65 && int(Word[index_Word][y]) <= 90)
                     {
 
-                        arr2[index_arr2][y] = char(int(arr2[index_arr2][y]) + 32); //ако буквата е главна, я превръща в малка
+                        Word[index_Word][y] = char(int(Word[index_Word][y]) + 32); //prevrushta glavni bukvi v malki
 
                     }
                     else
                     {
-                        arr2[index_arr2][y] = arr2[index_arr2][y];
+                        Word[index_Word][y] = Word[index_Word][y];
                     }
 
                 }
-                if (arr2[index_arr2][i] == randomWord[i])
+                if (Word[index_Word][i] == randomWord[i])
                 {
                     setColor(2);
-                    cout << arr2[i]; //проверява дали буквата е на правилното място
+                    cout << Word[i]; //proverqva dali bukvata e na pravilnoto mqsto
 
                 }
                 else
@@ -76,26 +75,28 @@ int main()
 
                     bool DiffPosition = false;
 
-                    for (int k = 0; k < 5; k++) { //този цикъл проверява дали буквата я има на някое друго място в думата
-                        if (arr2[index_arr2][i] == randomWord[k]) {
+                    for (int k = 0; k < 5; k++)//proverqva dali edna ot buvite na tursenata dume a na rzlichno mqsto i q ocvetqva v julto
+                    {
+                        if (Word[index_Word][i] == randomWord[k])
+                        {
                             setColor(6);
-                            cout << arr2[index_arr2][i];
+                            cout << Word[index_Word][i];
                             DiffPosition = true;
                             break;
                         }
                     }
 
 
-                    if (!DiffPosition) { //ако буквата не е там я оцветява в синьо
+                    if (!DiffPosition) //ako bukvata q nqma v tursenata  duma tq se ocvetqva v sinqo
+                    {
                         setColor(9);
-                        cout << arr2[index_arr2][i];
+                        cout << Word[index_Word][i];
                     }
                 }
 
 
 
-                setColor(7);//връща основния цвят на буквите
-
+                setColor(7);//vrushta osnovniq cvqt na bukvite
 
             }
         }

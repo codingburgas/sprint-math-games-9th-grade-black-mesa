@@ -4,7 +4,7 @@
 #include <cstring> //za string
 
 using  namespace std;
-void setColor(int color) 
+void setColor(int color)
 {
     HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
     SetConsoleTextAttribute(hConsole, color);//pozvolqva da se ocvetqt bukvite
@@ -12,7 +12,7 @@ void setColor(int color)
 
 int main()
 {
-    bool Symbol=false;
+    bool Symbol = false;
     string Word[100];
     int index_Word;
     int attempts = 6; //v wordle ima 6 attempta
@@ -27,18 +27,18 @@ int main()
         cin >> Word[i]; //vuvejda se dumata
         index_Word = i;
 
-        for(int index_num=0; index_num<5; index_num++)
+        for (int index_num = 0; index_num < 5; index_num++)
         {
             if (int(Word[index_Word][index_num]) < 65 && int((Word[index_Word][index_num]) > 90 || (int(Word[index_Word][index_num]) < 97) && int(Word[index_Word][index_num]) > 122)) //proverqva dali v dumata ima simvoli
             {
                 Symbol = true;
             }
         }
-        if(Symbol == true)
+        if (Symbol == true)
         {
             cout << "Please don't type any symbols!" << endl;
             ++attempts;
-            Symbol=false;
+            Symbol = false;
         }
         else
         {

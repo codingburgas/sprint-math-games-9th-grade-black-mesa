@@ -12,9 +12,9 @@ void setColor(int color)
 
 int main()
 {
+    bool Symbol=false;
     string Word[100];
     int index_Word;
-    bool Symbol = false;
     int attempts = 6; //v wordle ima 6 attempta
     string arrWords[5] = { "radio", "where", "pupil", "games", "fifth" };
 
@@ -25,80 +25,90 @@ int main()
     for (int i = 0; i < attempts; i++)
     {
         cin >> Word[i]; //vuvejda se dumata
-        if (int(Word[i].length()) == 5) //proverqva dali dumata  e ot 5 bukvi
+        index_Word = i;
+
+        for(int index_num=0; index_num<5; index_num++)
         {
-             cout << endl;
+            if (int(Word[index_Word][index_num]) < 65 && int((Word[index_Word][index_num]) > 90 || (int(Word[index_Word][index_num]) < 97) && int(Word[index_Word][index_num]) > 122)) //proverqva dali v dumata ima simvoli
+            {
+                Symbol = true;
+            }
+        }
+        if(Symbol == true)
+        {
+            cout << "Please don't type any symbols!" << endl;
+            ++attempts;
+            Symbol=false;
         }
         else
         {
-             cout << "Please type only words with 5 letters!" << endl;
-             ++attempts; //uvelichava attempts za da  uvelichi opitite
-        }
-        index_Word = i;
-        if (int(Word[index_Word][i]) < 65 || int((Word[index_Word][i]) > 90 && int(Word[index_Word][i]) < 97) || int(Word[index_Word][i]) > 122) //proverqva dali v dumata ima simvoli
-        {
-
-            Symbol = true;
-
-
-        }
-        else 
-        {
-
-
-            for (int i = 0; i < 5; i++)
+            if (int(Word[i].length()) == 5) //proverqva dali dumata  e ot 5 bukvi
             {
-
-                for (int y = 0; y < 5; y++)
+                for (int index_num = 0; index_num < 5; index_num++)
                 {
 
-                    if (int(Word[index_Word][y]) >= 65 && int(Word[index_Word][y]) <= 90)
+                    for (int y = 0; y < 5; y++)
                     {
 
-                        Word[index_Word][y] = char(int(Word[index_Word][y]) + 32); //prevrushta glavni bukvi v malki
+                        if (int(Word[index_Word][y]) >= 65 && int(Word[index_Word][y]) <= 90)
+                        {
+
+                            Word[index_Word][y] = char(int(Word[index_Word][y]) + 32); //prevrushta glavni bukvi v malki
+
+                        }
+                        else
+                        {
+                            Word[index_Word][y] = Word[index_Word][y];
+                        }
+
+                    }
+                    if (Word[index_Word][index_num] == randomWord[index_num])
+                    {
+                        setColor(2);
+                        cout << Word[index_Word][index_num]; //proverqva dali bukvata e na pravilnoto mqsto
 
                     }
                     else
                     {
-                        Word[index_Word][y] = Word[index_Word][y];
-                    }
 
-                }
-                if (Word[index_Word][i] == randomWord[i])
-                {
-                    setColor(2);
-                    cout << Word[i]; //proverqva dali bukvata e na pravilnoto mqsto
+                        bool DiffPosition = false;
 
-                }
-                else
-                {
-
-                    bool DiffPosition = false;
-
-                    for (int k = 0; k < 5; k++)//proverqva dali edna ot buvite na tursenata dume a na rzlichno mqsto i q ocvetqva v julto
-                    {
-                        if (Word[index_Word][i] == randomWord[k])
+                        for (int k = 0; k < 5; k++)//proverqva dali edna ot buvite na tursenata dume a na rzlichno mqsto i q ocvetqva v julto
                         {
-                            setColor(6);
-                            cout << Word[index_Word][i];
-                            DiffPosition = true;
-                            break;
+                            if (Word[index_Word][index_num] == randomWord[k])
+                            {
+                                setColor(6);
+                                cout << Word[index_Word][index_num];
+                                DiffPosition = true;
+                                break;
+                            }
+                        }
+
+
+                        if (!DiffPosition) //ako bukvata q nqma v tursenata  duma tq se ocvetqva v sinqo
+                        {
+                            setColor(9);
+                            cout << Word[index_Word][index_num];
                         }
                     }
 
 
-                    if (!DiffPosition) //ako bukvata q nqma v tursenata  duma tq se ocvetqva v sinqo
-                    {
-                        setColor(9);
-                        cout << Word[index_Word][i];
-                    }
+
+                    setColor(7);//vrushta osnovniq cvqt na bukvite
+
                 }
-
-
-
-                setColor(7);//vrushta osnovniq cvqt na bukvite
-
             }
+            else
+            {
+                cout << "Please type only words with 5 letters!" << endl;
+                ++attempts; //uvelichava attempts za da  uvelichi opitite
+            }
+            if (Word[index_Word] == randomWord)
+            {
+                cout << endl << "Congratulations you won!";
+                break;
+            }
+            cout << endl;
         }
     }
 }

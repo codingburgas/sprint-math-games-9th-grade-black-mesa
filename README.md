@@ -12,7 +12,7 @@ Word Game Where The Player is Trying To Guess 1 Out of 16 Words With 6 Attempts 
 
 ##  Run the game
 <ol>
-    <li><h2> Download The Latest Version</h2> </li>
+    <li><h2> Download The latest Version</h2> </li>
     <li><h2> Run The Wordly.sln File</h2> </li>
 </ol>
 

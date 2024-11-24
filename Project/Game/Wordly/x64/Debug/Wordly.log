@@ -1,0 +1,3 @@
+﻿  Wordly.cpp
+C:\Users\HP\Desktop\sprint-math-games-9th-grade-black-mesa\Project\Game\Wordly\Wordly.cpp(147,31): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+  Wordly.vcxproj -> C:\Users\HP\Desktop\sprint-math-games-9th-grade-black-mesa\Project\Game\x64\Debug\Wordly.exe
